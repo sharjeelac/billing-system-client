@@ -32,7 +32,7 @@ const SalesReports = () => {
     setIsLoading(true);
     try {
       console.log(`Fetching sales reports for period: ${period}, startDate: ${startDate}, endDate: ${endDate}`);
-      let backendUri = 'http://localhost:5000/api' || process.env.REACT_APP_API_URL
+      let backendUri = 'https://billing-system-server-ten.vercel.app/api' || process.env.REACT_APP_API_URL
       let url = `${backendUri}/reports/sales?period=${period}`;
       if (period === 'custom' && startDate && endDate) {
         url += `&startDate=${startDate}&endDate=${endDate}`;
